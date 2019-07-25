@@ -31,6 +31,8 @@ header
 	margin-top: 45px
 
 .infoAboutFilm
+	position: relative
+	z-index: 10
 	& ul 
 		& > li 
 			& > span 
@@ -50,7 +52,10 @@ header
 					letter-spacing: -0.2px
 					line-height: 48px
 
-.nav 
+
+
+.nav
+	display: flex 
 	& .logo 
 		& > span 
 			text-align: center
@@ -78,13 +83,16 @@ header
 
 
 /* MAIN -------------------------------------------------------------- */
-main 
-	width: 57%
+$main-width: 57%
+main 	
+	width: $main-width
+	position: relative
 	margin: auto
-	background-color: #f5f5f5				
+	background-color: #f5f5f5		
+	padding-bottom: 70px
 	& .descrptFilm
 		&__text 
-			margin-left: 30px
+			margin: 0 15px 0 30px
 			& > p 
 				color: #101010
 				font-size: 18px
@@ -95,7 +103,7 @@ main
 	& .reviewsFilm
 		margin: 35px 5%
 		padding-bottom: 35px
-		& > span 
+		& span 
 			padding: 2px 0
 			padding-left: 5px			
 			color: #101010
@@ -103,20 +111,25 @@ main
 			font-weight: 400
 			line-height: 18px
 			letter-spacing: -0.09px
-			&:first-child
+			margin: 0 15px
+		& > span
 				padding-left: 0
 				font-size: 24px
 				letter-spacing: -0.12px		
-			&:nth-child(2)
-				background-image: linear-gradient(to right, #B7FFB1 87%, rgba(255,255,255, 0) 18%)			
-			&:nth-child(3)
-				background-image: linear-gradient(to right, #D7D7D7 22%, rgba(255,255,255, 0) 15%)				
-			&:last-child
-				background-image: linear-gradient(to right, #FFB1B1 27%, rgba(255,255,255, 0) 10%)				
+		& > div 
+			& > span 
+				&:first-child
+			    background-image: linear-gradient(to right, #B7FFB1 87%, rgba(255,255,255, 0) 18%)			
+				&:nth-child(2)
+					background-image: linear-gradient(to right, #D7D7D7 22%, rgba(255,255,255, 0) 15%)				
+				&:last-child
+					background-image: linear-gradient(to right, #FFB1B1 27%, rgba(255,255,255, 0) 10%)				
 
 .momentFromFilm__wrapper
 	position: relative
-.momentFromFilm 
+.momentFromFilm
+	& > img:first-child 
+		width: 100%
 	&:after 
 		content: ''
 		position: absolute
@@ -132,3 +145,211 @@ main
 		top: calc(50% - 50px)
 		z-index: 101	
 		cursor: pointer
+
+
+.slider__wrapper
+	position: relative
+	& .arrows 
+		position: absolute
+		height: 35px
+		top: calc(50% - 17.5px)
+		width: 100%
+		left: 0px
+		right: 0px
+		& .prevArrow 
+			position: absolute
+			height: 35px
+			left: 45px
+			cursor: pointer
+		& .nextArrow 
+			position: absolute
+			height: 35px
+			right: 45px
+			cursor: pointer
+.slider 
+	width: 75%
+	margin: 65px auto 0
+	padding-left: 25px
+	& .photos 
+		& img 
+			margin-right: 30px
+
+
+
+/* FOOTER -------------------------------------------------------------- */
+
+footer
+	position: relative
+	padding: 20px 0
+	& .footerLinks
+		width: $main-width
+		margin: auto
+		& > span 
+			margin-right: 15px
+			&:last-child 
+				margin-right: 0
+			& > a 
+				color: #ffffff
+				font-size: 14px
+				font-weight: 400
+				letter-spacing: -0.07px	
+	& .deadpool-art
+		position: absolute
+		right: 0px
+		bottom: 0
+		z-index: -1
+
+
+
+
+
+/* MEDIA REQUEST ------------------------------------------------------- */
+
+@media all and (min-width: 1700px)
+	footer .deadpool-art
+		max-width: 510px
+
+@media all and (max-width: 1400px)
+	footer .deadpool-art
+		max-width: 410px		
+
+@media all and (max-width: 1200px) 
+	.infoAboutFilm ul > li:first-child > span
+		font-size: 85px
+	.infoAboutFilm ul > li > span
+		font-size: 37px	
+
+	.nav .menu ul > li
+		padding: 3px 40px
+
+	main .descrptFilm__text > p
+		font-size: 15px
+		max-width: 260px
+
+	main .reviewsFilm > span:first-child
+		font-size: 21px
+	main .reviewsFilm > span 
+		font-size: 15px
+
+	.reviewsFilm 
+		flex-direction: column
+		align-items: flex-start !important
+		justify-content: flex-start !important
+		& > div 
+			margin: 10px
+			flex-wrap: wrap
+			& > span 
+				margin: 10px
+	footer .deadpool-art
+		max-width: 310px	
+
+@media all and	(max-width: 991px) 
+	$main-width-991: 65%
+	main 
+		width: $main-width
+	.mob-header 
+		width: 90%
+		margin: auto
+		margin-top: 30px
+	.deadpoolHeader
+		& > img
+			max-height: 330px	
+	/*.reviewsFilm 
+		& > div 
+			flex-direction: column		*/
+	main .reviewsFilm span
+		font-size: 15px		
+	.footerLinks
+		width: $main-width-991	
+	footer .deadpool-art
+		max-width: 250px	
+	
+@media all and	(max-width: 768px) 
+	$main-width-768: 70%
+	main 
+		width: $main-width-768
+	main .descrptFilm__text
+		margin-left: 20px	
+	main .descrptFilm__text > p
+		font-size: 14px	
+	.deadpoolHeader
+		& > img
+			max-height: 250px
+	.slider
+		padding-left: 34px		
+	.slider__wrapper .arrows .nextArrow 
+		right: 35px		
+	.slider__wrapper .arrows .prevArrow 
+		left: 35px			
+	.footerLinks
+		width: $main-width-768 !important
+	footer .deadpool-art
+		max-width: 120px		
+		bottom: 88px
+
+@media all and	(max-width: 576px)
+	$main-width-576: 78%
+	main 
+		width: $main-width-576 
+	main .descrptFilm__text > p
+		font-size: 13px
+	.descrptFilm
+		flex-direction: column
+		align-items: center
+	.infoAboutFilm ul > li > span 
+		font-size: 32px	
+	.infoAboutFilm ul > li:first-child > span
+		font-size: 55px		
+	.nav .logo > span
+		font-size: 35px
+	.nav .menu ul > li
+		padding: 3px 30px	
+	.deadpoolHeader
+		max-width: 100%
+		flex: 0 0 100%	
+	.momentFromFilm .play 
+		width: 70px
+		left: calc(50% - 35px)
+		top: calc(50% - 35px)
+	.slider__wrapper .arrows .nextArrow
+		right: 25px
+	.slider__wrapper .arrows .prevArrow	
+		left: 25px
+	.footerLinks
+		width: $main-width-576 !important
+	footer .footerLinks > span > a
+		font-size: 11px	
+	footer .deadpool-art
+		display: none
+
+@media all and	(max-width: 400px)
+	$main-width-400: 82%
+	main 
+		width: $main-width-400
+	.infoAboutFilm ul > li:first-child > span
+		font-size: 45px		
+	.nav .logo > span
+		font-size: 32px
+	.nav .menu ul > li
+		padding: 3px 20px
+	.nav .menu ul > li > a
+		font-size: 15px			
+	.momentFromFilm .play 
+		width: 60px
+		left: calc(50% - 30px)
+		top: calc(50% - 30px)	
+	.footerLinks
+		width: $main-width-400 !important
+		flex-wrap: wrap
+		justify-content: flex-start !important	
+	.deadpoolHeader
+		max-height: 180px
+	.logo > img 
+		width: 50px
+		height: 50px		
+
+@media all and	(min-width: 991px) 
+	.mob-header 
+		display: none	!important
+		
+

@@ -21,7 +21,6 @@ return gulp.src("app/sass/*.sass")
 
 });
 
-gulp.task('jade')
 
 gulp.task('watch' , function() {
 
@@ -36,6 +35,7 @@ server: "app/"
 gulp.watch("app/sass/*.sass", gulp.parallel('sass'));
 
 gulp.watch("app/*.html").on('change', browserSync.reload);
+gulp.watch("app/js/*.js").on('change', browserSync.reload);
 
 });
 

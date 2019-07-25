@@ -2,17 +2,51 @@
 <html lang="en">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- bootstrap 4 link -->
+
+	<!-- bootstrap 4 link ------------------------------------------------------------------------------------------- -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-	<!-- END bootstrap 4 link -->
+
+	<!-- Connect Slick Slider ----------------------------------------------------------------------------- --> 
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
 	<link rel="stylesheet" href="css/main.css">
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>
 <body>
-	<header class="d-flex align-items-start">
+	<div class="mob-header  d-flex align-items-start justify-content-between flex-wrap">
+		<div class="infoAboutFilm col-5">
+			<nav>
+				<ul class="d-flex flex-column">
+					<li><span>DEADPOOL</span></li>
+					<li><span>2016</span></li>
+					<li><span>USA</span></li>
+					<li><span>18+</span></li>
+				</ul>
+			</nav>
+		</div>
+	
+		<div class="nav col-5 d-flex flex-column align-items-center justify-content-between">
+			<div class="logo d-flex align-items-center flex-column">
+				<img width="70" height="70" src="images/logo.svg" alt="logo">
+				<span>spike</span>
+			</div>
+			<div class="menu">
+				<nav>
+					<ul>
+						<li><a href="#">Все кино</a></li>
+						<li><a href="#">Рейтинги</a>
+						<li><a href="#">Общение</a></li>
+						<li><a href="#">Войти</a></li></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<header class="d-flex align-items-start justify-content-lg-between justify-content-center flex-wrap">
+			
 
-			<div class="infoAboutFilm">
+			<div class="infoAboutFilm col-2">
 				<nav>
 					<ul class="d-flex flex-column">
 						<li><span>DEADPOOL</span></li>
@@ -22,10 +56,12 @@
 					</ul>
 				</nav>
 			</div>
-			<div class="deadpoolHeader">
+
+			<div class="deadpoolHeader d-flex justify-content-center col-lg-8 col-10">
 				<img class="img-fluid" src="images/deadpool.png" alt="deadpool">
 			</div>
-			<div class="nav d-flex flex-column align-items-center">
+
+			<div class="nav col-2  flex-column align-items-center justify-content-between">
 				<div class="logo d-flex align-items-center flex-column">
 					<img width="70" height="70" src="images/logo.svg" alt="logo">
 					<span>spike</span>
@@ -56,11 +92,13 @@
 					</p>
 				</div>	
 			</div>
-			<div class="reviewsFilm d-flex align-items-center justify-content-between">
+			<div class="reviewsFilm d-flex flex-wrap align-items-center justify-content-between">
 				<span>Рецензии:</span>
-				<span>266 <br> положительных</span>
-				<span>41 <br> нейтральная</span>
-				<span>66 <br> отрицательных</span>
+				<div class="d-flex">
+					<span>266 <br> положительных</span>
+					<span>41 <br> нейтральная</span>
+					<span>66 <br> отрицательных</span>
+				</div>	
 			</div>
 		</div>
 		<div class="momentFromFilm__wrapper">
@@ -69,8 +107,36 @@
 				<img class="play img-fluid" src="images/play.svg" alt="play video">
 			</div>
 		</div>	
+		<div class="slider__wrapper container-fluid">
+			<div class="slider ">
+
+				<div class="photos">
+					<img src="images/slider/1.svg" alt="slide">
+					<img src="images/slider/2.svg" alt="slide">
+					<img src="images/slider/3.svg" alt="slide">
+					<img src="images/slider/1.svg" alt="slide">
+					<img src="images/slider/2.svg" alt="slide">
+					<img src="images/slider/3.svg" alt="slide">
+				</div>
+
+			</div>
+			<div class="arrows d-flex justify-content-between">	
+				<div class="prevArrow"><img src="images/slider/prev.svg" alt="arrow"></div>
+				<div class="nextArrow"><img src="images/slider/next.svg" alt="arrow"></div>
+			</div>
+		</div>	
 	</main>
 
+	<footer>
+		<div class="footerLinks d-flex justify-content-end">
+			<span><a href="#">Реклама</a></span>
+			<span><a href="#">Условия использования </a></span>
+			<span><a href="#">© 2003–2016 Spike</a></span>
+		</div>
+		<div class="deadpool-art">
+			<img class="img-fluid" src="images/art-deadpool.png" alt="deadpool-art">
+		</div>
+	</footer>
 
 	<!-- bootstrap 4 script -->
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -78,6 +144,13 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 	<!--END bootstrap 4 script -->
 
+	<script
+		src="http://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"> 	
+	</script>
+
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>
