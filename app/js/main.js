@@ -53,6 +53,20 @@ $(document).ready(function() {
 			$('.mob-header').css('display' , 'none');
 		}
 	} 
+
+	$('.nav .logo > img').mouseenter(function(){
+		$('.infoAboutFilm ul > li:first-child > span').css({'color':'#510100' , 'transition':'0.5s'});
+		console.log('Это всё (')
+	});
+
+	function deadpoolAnimate() {
+		$('.deadpoolHeader > img').addClass('animated bounceInDown');
+		$('.deadpoolHeader > img').css('display','block');
+	};
+	setTimeout(deadpoolAnimate, 500);
+
+	console.log('Привет ! ');
+	console.log('Прицелься на звездочку !');
 		
 });
 

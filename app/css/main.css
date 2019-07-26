@@ -43,6 +43,9 @@ header {
     letter-spacing: -0.2px;
     line-height: 48px; }
 
+.deadpoolHeader > img {
+  display: none; }
+
 .nav {
   display: flex; }
   .nav .logo > span {
@@ -52,6 +55,12 @@ header {
     font-weight: 400;
     line-height: 48px;
     letter-spacing: -0.2px; }
+  .nav .logo > img:hover + span {
+    transition: 0.5s;
+    color: #7E032C; }
+  .nav .logo > img:hover {
+    transform: rotate3d(2, 1, 0, 180deg);
+    transition: 1s; }
   .nav .menu {
     margin-top: 30px; }
     .nav .menu ul > li {
